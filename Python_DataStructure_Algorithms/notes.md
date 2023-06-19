@@ -1,0 +1,1 @@
+log(16) = 4, means it will take 4 times to devided to 1, so, 16/2 =8 8/2 =4 ,4/2=2 ,2/2 = 1

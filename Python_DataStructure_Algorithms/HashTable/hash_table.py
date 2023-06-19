@@ -1,5 +1,5 @@
 
-
+# Hashing: generating a value from a string using a mathematical function
 class HashTable:
     def __init__(self, size = 7):
         # create list with 7 items and all items are none

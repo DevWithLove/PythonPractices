@@ -41,18 +41,85 @@ class BinarySearchTree:
             else: # when it equal 
                 return True
         return False
+    
+    # YOU CAN ALSO WRITE BFS WITH A QUEUE INSTEAD OF LIST
+    # (TECHNICALLY THIS IS A BETTER SOLUTION)
+    #
+    # def BFS(self):
+    #     current_node = self.root
+    #     queue = Queue()
+    #     results = []
+    #     queue.put(current_node)
+
+    #     while not queue.empty():
+    #         current_node = queue.get()
+    #         results.append(current_node.value)
+    #         if current_node.left is not None:
+    #             queue.put(current_node.left)
+    #         if current_node.right is not None:
+    #             queue.put(current_node.right)
+    #     return results
+
+    # breadth first search    
+    def BFS(self): 
+        current_node = self.root
+        queue = []
+        results = []
+        queue.append(current_node)
+
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            results.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return results
+    
+    # depth first search (preOrder)
+    def dfs_pre_order(self):
+        results = []
+        def traverse(current_node):
+            results.append(current_node.value)
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+        traverse(self.root)
+        return results
+
             
 
-tree = BinarySearchTree()
-tree.insert(2)
-tree.insert(1)
-tree.insert(3)
-tree.insert(78)
-tree.insert(21)
+my_tree = BinarySearchTree()
+my_tree.insert(47)
+my_tree.insert(21)
+my_tree.insert(76)
+my_tree.insert(18)
+my_tree.insert(27)
+my_tree.insert(52)
+my_tree.insert(82)
 
-print(tree.root.value)
-print(tree.root.left.value)
-print(tree.root.right.value)
+print(my_tree.BFS())
 
-print(tree.contains(22))
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    [47, 21, 76, 18, 27, 52, 82]
+
+ """
+
+# tree = BinarySearchTree()
+# tree.insert(2)
+# tree.insert(1)
+# tree.insert(3)
+# tree.insert(78)
+# tree.insert(21)
+
+# print(tree.root.value)
+# print(tree.root.left.value)
+# print(tree.root.right.value)
+
+# print(tree.contains(22))
 
