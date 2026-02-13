@@ -33,6 +33,7 @@ Follow up: Could you implement a solution using only O(1) extra space complexity
 math: sum = n * (n+1) /2
 """
 from typing import List
+
 def find_missing_num(nums: List[int]) -> int:
     n = len(nums)
     intend_total = n*(n+1)/2
