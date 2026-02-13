@@ -80,7 +80,7 @@
 
 # print(addTwo(5))
 
-# .fund(), .count()
+# .find(), .count()
 # s = 'hello'
 # print(s.find('l')) # give me the first index of the l
 # print(s.find('h'))
@@ -188,6 +188,26 @@
 # print(isMagicSquares(3, [2,7,6],[9,5,1],[4,3,8]))
 # print(isMagicSquares(4, [16,2,3,13],[5,11,10,8],[9,7,6,12],[4,14,15,1]))
 
+###### String Compression #############
+# https://www.youtube.com/watch?v=mWU7t6Wu9sM&list=PLzMcBGfZo4-l73euhrUu0exrXc_1HQPV0&index=5
+
+# def stringCompression(str):
+#     newStr = ""
+#     sub = str[0]
+#     for c in str[1:]:
+#       if sub.find(c) != -1 :
+#          sub += c
+#       else:
+#         newStr += f"{len(sub)}{sub[0]}"
+#         sub = c
+    
+#     newStr += f"{len(sub)}{sub[0]}"
+#     return newStr
+
+# print(stringCompression("+++=====!!!!!!!"))
 
 
-
+# test = [1,2,3,4,5]
+# testR = test[::-1] #revers 
+# print(test)
+# print(testR)
