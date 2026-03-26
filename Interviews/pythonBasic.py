@@ -211,3 +211,185 @@
 # testR = test[::-1] #revers 
 # print(test)
 # print(testR)
+
+ #intervals.sort(key=lambda x:x[0])
+
+#  "".join(c.lower() for c in s if c.isalnum())
+# isdigit()  "".join(sorted(s))
+
+# nomral subsets
+# def dfs(start):
+#     result.append(path[:])
+#     for i in range(start, len(nums)):
+#         path.append(nums[i])
+#         dfs(i + 1)
+#         path.pop()
+
+
+
+
+# class Node: 
+#     def __init__(self, val, left= None, right = None):
+#        self.val = val 
+#        self.left = left
+#        self.right = right
+    
+
+# def bfs(root): 
+#     queue = [root]
+    
+#     while queue:
+
+#         size = len(queue)
+#         values = []
+#         for _ in range(size): 
+#             node = queue.pop(0)
+#             values.append(node)
+            
+#             if node.left:
+#                 queue.append(node.left)
+
+#             if not node.left:
+#                 values.append(None)
+
+#             if node.right:
+#                 queue.append(node.right)
+#             if not node.right:
+#                 values.append(None)
+
+#         s = ""
+#         for n in values:
+#             s+=str(n.val)
+#         print(s)
+        
+
+
+# n = Node(1, Node(2, Node(4)), Node(3, Node(6), Node(7)))
+# bfs(n)
+
+        
+
+# def merge_list(sourceOne, sourceTwo):
+#     seen = { }
+#     for s1 in sourceOne:
+#         if s1.lower() not in seen:
+#             seen[s1.lower()] = s1
+    
+#     for s2 in sourceTwo: 
+#         if s2.lower() not in seen:
+#             seen[s2.lower()] = s2
+    
+#     return list(seen.values())
+
+# print(merge_list(["Azure", "Functions", "Serverless"], ["azure", "Cloud", "functions"]))
+
+# def return_top_k_tags(providers, k):
+
+#     tags = {}
+
+#     for provider in providers:
+
+#         for tag, score in provider:
+#             key = tag.lower()
+
+#             if key not in tags:
+#                 tags[key] = [tag, score, 1]
+#             else: 
+#                 tags[key][1] = score + tags[key][1]
+#                 tags[key][2] += 1
+        
+#     result = []
+
+#     for key in tags:
+#             name, sum, count = tags[key]
+#             average = sum / count
+#             result.append((name, average))
+        
+#     result.sort(key=lambda x:x[1], reverse=True)
+#     return result[:k]
+
+# providers =[
+#     [("Azure", 0.9), ("Functions", 0.7), ("Serverless", 0.5)],
+#     [("azure", 0.8), ("Cloud", 0.6), ("functions", 0.85)],
+#     [("AZURE", 0.75), ("Storage", 0.4)] 
+# ]
+# print(return_top_k_tags(providers, 2))
+
+
+
+
+
+
+
+# def queryRewrite(query, mapping):
+
+#     for old, new in mapping.items():
+
+#          if old in query:
+#              query = query.replace(old, new)
+        
+#     return query
+
+# import re
+
+# def queryRewrite(query, mapping):
+#     for old, new in mapping.items():
+#         pattern = r'\b' + re.escape(old) + r'\b'
+#         query = re.sub(pattern, new, query, flags=re.IGNORECASE)
+#     return query
+
+
+# mapping = {
+#     "Azure AD": "Azure Enter ID",
+#     "ADD": "Azure Enter ID",
+#     "azur": "Azure"
+# }
+
+
+# print(queryRewrite("what is azure?", mapping))
+# print(queryRewrite("What is Azure AD?", mapping))
+
+
+
+
+
+
+
+
+
+# "abc"
+
+# "asdfsd fdsf sdfsdsfsdf sdfeabceeefe sdfds fsdf sd. fsdfds"
+# asdfsd fdsf sdfsdsfsdf sdfe
+# abceeefe sdfds 
+
+# def search_str_in_file(file_path, target):
+#     chunk_size = 3000
+#     k = len(target)
+
+#     position = 0 
+
+#     prev = ""
+#     with open(file_path) as f:
+#         while True:
+#           chunk = f.read(chunk_size)
+
+#           if not chunk:
+#              break
+          
+#           buffer = prev + chunk
+
+#           index = buffer.find(target)
+
+#           if index != -1:
+#              return position - len(prev) + index
+          
+#           # get the prev 
+#           prev = buffer[-(k-1):]
+
+#           position += len(chunk)
+
+
+#         return -1
+
+
